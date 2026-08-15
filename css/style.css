@@ -1,0 +1,301 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --danger: #dc2626;
+}
+
+body.dark {
+  --bg: #111827;
+  --card: #1f2937;
+  --text: #f9fafb;
+  --muted: #9ca3af;
+  --border: #374151;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+}
+
+.dashboard {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  margin: 4px 0;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+.clock {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+#date {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.icon-button {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 24px;
+}
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.card h2 {
+  font-size: 1.35rem;
+}
+
+.eyebrow,
+.small-label {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+#taskCount {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.input-row {
+  display: flex;
+  gap: 8px;
+}
+
+input:not([type="checkbox"]) {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text);
+  outline: none;
+}
+
+input:not([type="checkbox"]):focus {
+  border-color: var(--primary);
+}
+
+button {
+  padding: 11px 16px;
+  border-radius: 10px;
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+}
+
+button:hover {
+  background: var(--primary-hover);
+}
+
+button.secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.task-list {
+  list-style: none;
+  margin-top: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.task-text {
+  flex: 1;
+  word-break: break-word;
+}
+
+.task-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.task-actions button {
+  padding: 7px 9px;
+  font-size: 0.8rem;
+}
+
+.task-actions .delete {
+  background: var(--danger);
+}
+
+.task-actions .save {
+  background: var(--primary);
+}
+
+.task-actions .cancel {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.task-edit-input {
+  flex: 1;
+  padding: 6px 10px;
+  font-size: 0.95rem;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  outline: none;
+  min-width: 0;
+}
+
+.timer-card {
+  text-align: center;
+}
+
+.timer {
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 700;
+  margin: 20px 0;
+  letter-spacing: 2px;
+}
+
+.timer-card .small-label {
+  display: block;
+  text-align: left;
+}
+
+.button-row {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.links-card,
+.name-card {
+  min-height: 200px;
+}
+
+.link-form {
+  display: grid;
+  grid-template-columns: 0.8fr 1.5fr auto;
+  gap: 8px;
+}
+
+.quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.quick-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.quick-link button {
+  padding: 3px 7px;
+  background: transparent;
+  color: var(--danger);
+}
+
+.name-card .input-row {
+  margin-top: 18px;
+}
+
+.empty {
+  color: var(--muted);
+  text-align: center;
+  padding: 18px 0;
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .link-form {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    align-items: flex-start;
+  }
+
+  .button-row {
+    flex-wrap: wrap;
+  }
+}
